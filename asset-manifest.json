@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/music-roulette/static/css/main.42a7b549.css",
+    "main.js": "/music-roulette/static/js/main.efa1b54c.js",
+    "index.html": "/music-roulette/index.html",
+    "main.42a7b549.css.map": "/music-roulette/static/css/main.42a7b549.css.map",
+    "main.efa1b54c.js.map": "/music-roulette/static/js/main.efa1b54c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.42a7b549.css",
+    "static/js/main.efa1b54c.js"
+  ]
+}
