@@ -2,8 +2,8 @@ import axios from 'axios'
 
 axios.defaults.baseURL = 'https://shazam-core.p.rapidapi.com/v1'
 axios.defaults.headers = {
-  'x-rapidapi-host': 'shazam-core.p.rapidapi.com',
-  'x-rapidapi-key': '4a3f424895msh6e9b210d0323fd9p13f1c4jsn63818c9ece13',
+  'x-rapidapi-host': process.env.REACT_APP_HOST,
+  'x-rapidapi-key': process.env.REACT_APP_API_KEY,
 }
 
 export const fetchCharts = async (countryCode = 'KR', limit = 100) => {
