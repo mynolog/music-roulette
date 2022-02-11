@@ -1,0 +1,57 @@
+.musicContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.musicBox {
+  width: 300px;
+  height: 350px;
+  border-radius: 20px;
+  border: 1px solid white;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.musicCover {
+  width: 50%;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.musicTitle {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.musicArtist {
+  font-size: 0.9rem;
+}
+
+.rouletteButton {
+  outline: none;
+  border: none;
+  width: 300px;
+  height: 50px;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #fff;
+  color: deeppink;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+}
+
+.rouletteButton:active {
+  transform: scale(0.9);
+  transition: 0.2s ease-in;
+}
