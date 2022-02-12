@@ -1,7 +1,14 @@
+import { SelectBox } from '../'
+
 import styles from './Music.module.css'
 
-function Music({ getRandomMusic, randomMusic, isStandBy }) {
-  console.log(randomMusic)
+function Music({
+  getRandomMusic,
+  randomMusic,
+  isStandBy,
+  setCurrentCountryCode,
+  countryCode,
+}) {
   return (
     <div className={styles.musicContainer}>
       <div className={styles.musicBox}>
@@ -17,7 +24,10 @@ function Music({ getRandomMusic, randomMusic, isStandBy }) {
           </>
         )}
       </div>
-
+      <SelectBox
+        setCurrentCountryCode={setCurrentCountryCode}
+        countryCode={countryCode}
+      />
       <button className={styles.rouletteButton} onClick={getRandomMusic}>
         Shake it!
       </button>
