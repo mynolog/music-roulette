@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Music } from './components/'
+import { Music, LoaderBar } from './components/'
 import { fetchCharts } from './api'
 import { makeRandomNumber } from './lib/makeRandomNumber'
 
@@ -31,11 +31,15 @@ function App() {
 
   return (
     <div className="appContainer">
-      <Music
-        getRandomMusic={getRandomMusic}
-        randomMusic={randomMusic}
-        isStandBy={isStandBy}
-      />
+      {isLoading ? (
+        <LoaderBar />
+      ) : (
+        <Music
+          getRandomMusic={getRandomMusic}
+          randomMusic={randomMusic}
+          isStandBy={isStandBy}
+        />
+      )}
     </div>
   )
 }
