@@ -1,4 +1,4 @@
-import styles from './Loading.module.css'
+import styles from './LoaderBar.module.css'
 
 function LoaderBar() {
   return (
