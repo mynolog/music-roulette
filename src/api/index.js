@@ -6,7 +6,7 @@ axios.defaults.headers = {
   'x-rapidapi-key': process.env.REACT_APP_API_KEY,
 }
 
-export const fetchCharts = async (countryCode = 'KR', limit = 100) => {
+export const fetchCharts = async (countryCode, limit) => {
   const options = {
     method: 'get',
     url: '/charts/country',
