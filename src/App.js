@@ -2,15 +2,19 @@ import { useEffect, useState } from 'react'
 import { Music, LoaderBar } from './components/'
 import { fetchCharts } from './api'
 import { makeRandomNumber } from './lib/makeRandomNumber'
-import { countryCode } from './constant/countryCode'
+import { countryCodeList, topLimit } from './constant'
 
 function App() {
   const [charts, setCharts] = useState([])
   const [randomMusic, setRandomMusic] = useState('')
-  const [limit, setLimit] = useState(100) // music chart limit
-  const [currentCountryCode, setCurrentCountryCode] = useState('KR')
+  const [query, setQuery] = useState({
+    currentCountryCode: 'KR',
+    limit: 100,
+  })
   const [isLoading, setIsLoading] = useState(true)
   const [isStandBy, setIsStandBy] = useState(false)
+
+  const { currentCountryCode, limit } = query
 
   useEffect(() => {
     const getCharts = async () => {
@@ -28,6 +32,9 @@ function App() {
       return
     }
     const index = makeRandomNumber(limit)
+    if (typeof charts[index].images.coverart === 'undefined') {
+      throw new Error('Music List is not ready...')
+    }
     setRandomMusic(charts[index])
     setIsStandBy(true)
   }
@@ -38,9 +45,11 @@ function App() {
       <Music
         getRandomMusic={getRandomMusic}
         randomMusic={randomMusic}
+        setQuery={setQuery}
+        query={query}
+        countryCodeList={countryCodeList}
+        topLimit={topLimit}
         isStandBy={isStandBy}
-        setCurrentCountryCode={setCurrentCountryCode}
-        countryCode={countryCode}
       />
     </div>
   )

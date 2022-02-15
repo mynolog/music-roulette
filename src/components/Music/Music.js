@@ -1,4 +1,4 @@
-import { SelectBox } from '../'
+import { SelectBox, LoaderBar } from '../'
 
 import styles from './Music.module.css'
 
@@ -6,8 +6,10 @@ function Music({
   getRandomMusic,
   randomMusic,
   isStandBy,
-  setCurrentCountryCode,
-  countryCode,
+  query,
+  setQuery,
+  countryCodeList,
+  topLimit,
 }) {
   return (
     <div className={styles.musicContainer}>
@@ -24,10 +26,16 @@ function Music({
           </>
         )}
       </div>
-      <SelectBox
-        setCurrentCountryCode={setCurrentCountryCode}
-        countryCode={countryCode}
-      />
+      <div className={styles.selectBox}>
+        {/* setCountryCode */}
+        <SelectBox
+          query={query}
+          setQuery={setQuery}
+          options={countryCodeList}
+        />
+        {/* setLimit */}
+        <SelectBox query={query} setQuery={setQuery} options={topLimit} />
+      </div>
       <button className={styles.rouletteButton} onClick={getRandomMusic}>
         Shake it!
       </button>

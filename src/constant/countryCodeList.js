@@ -1,4 +1,4 @@
-export const countryCode = [
+export const countryCodeList = [
   { value: 'KR', label: 'South Korea' },
   { value: 'DE', label: 'Germany' },
   { value: 'PT', label: 'Portugal' },
