@@ -13,8 +13,8 @@ function Music({
 }) {
   return (
     <div className={styles.musicContainer}>
-      <div className={styles.musicBox}>
-        {isStandBy && (
+      {isStandBy && (
+        <div className={styles.musicBox}>
           <>
             <div className={styles.musicContents}>
               <img
@@ -38,8 +38,9 @@ function Music({
               />
             </div>
           </>
-        )}
-      </div>
+        </div>
+      )}
+
       <div className={styles.selectBox}>
         {/* setCountryCode */}
         <SelectBox
