@@ -1,4 +1,4 @@
-import { SelectBox, LoaderBar } from '../'
+import { SelectBox, Button } from '../'
 
 import styles from './Music.module.css'
 
@@ -16,13 +16,27 @@ function Music({
       <div className={styles.musicBox}>
         {isStandBy && (
           <>
-            <img
-              className={styles.musicCover}
-              src={randomMusic.images.coverart}
-              alt={randomMusic.subtitle}
-            />
-            <span className={styles.musicTitle}>{randomMusic.title}</span>
-            <span className={styles.musicArtist}>{randomMusic.subtitle}</span>
+            <div className={styles.musicContents}>
+              <img
+                className={styles.musicCover}
+                src={randomMusic.images.coverart}
+                alt={randomMusic.subtitle}
+              />
+              <span className={styles.musicTitle}>{randomMusic.title}</span>
+              <span className={styles.musicArtist}>{randomMusic.subtitle}</span>
+            </div>
+            <div className={styles.musicUrls}>
+              <Button
+                onClick={() => window.open(randomMusic.apple_music_url)}
+                bgColor="FA576A"
+                value="Apple Music"
+              />
+              <Button
+                onClick={() => window.open(randomMusic.url)}
+                bgColor="0088FF"
+                value="Shazam"
+              />
+            </div>
           </>
         )}
       </div>

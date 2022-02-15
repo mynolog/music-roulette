@@ -16,9 +16,16 @@
   margin-bottom: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   position: relative;
+}
+
+.musicContents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .musicCover {
@@ -35,6 +42,17 @@
 .musicArtist {
   font-size: 0.9rem;
   font-style: italic;
+}
+
+.musicUrls {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.selectBox {
+  display: flex;
 }
 
 .rouletteButton {
