@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import { Music, LoaderBar } from './components/'
+import { Routes, Route } from 'react-router-dom'
+import { Music, Chart, LoaderBar } from './components/'
 import { fetchCharts } from './api'
 import { makeRandomNumber } from './lib/makeRandomNumber'
 import { countryCodeList, topLimit } from './constant'
@@ -39,20 +40,34 @@ function App() {
     setIsStandBy(true)
   }
 
+  const { REACT_APP_BASE_URL: BASE_URL } = process.env
+
   return (
     <div className="appContainer">
       {isLoading && <LoaderBar />}
-      <Music
-        getRandomMusic={getRandomMusic}
-        randomMusic={randomMusic}
-        setQuery={setQuery}
-        query={query}
-        countryCodeList={countryCodeList}
-        topLimit={topLimit}
-        isStandBy={isStandBy}
-      />
+      <Routes>
+        <>
+          <Route
+            path={`${BASE_URL}`}
+            element={
+              <Music
+                getRandomMusic={getRandomMusic}
+                randomMusic={randomMusic}
+                setQuery={setQuery}
+                query={query}
+                countryCodeList={countryCodeList}
+                topLimit={topLimit}
+                isStandBy={isStandBy}
+              />
+            }
+          />
+          <Route
+            path={`${BASE_URL}/chart`}
+            element={<Chart charts={charts} />}
+          />
+        </>
+      </Routes>
     </div>
   )
 }
-
 export default App

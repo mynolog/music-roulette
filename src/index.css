@@ -8,5 +8,8 @@
 body {
   font-family: 'Barlow', sans-serif;
   background-color: #202124;
-  overflow: hidden;
+}
+
+li {
+  list-style: none;
 }

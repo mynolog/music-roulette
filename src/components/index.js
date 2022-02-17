@@ -3,3 +3,4 @@ export { default as SelectBox } from './Global/SelectBox/SelectBox'
 export { default as Button } from './Global/Button/Button'
 
 export { default as Music } from './Music/Music'
+export { default as Chart } from './Chart/Chart'
