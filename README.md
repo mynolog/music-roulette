@@ -1,5 +1,7 @@
 # Music Roulette
 
+## 👉 [Music Roulette 보러 가기](https://minholeelog.github.io/music-roulette/)
+
     🎧 리액트로 만드는 랜덤 음악 추천 서비스 with Shazam Core API
 
 ## 개선 사항
