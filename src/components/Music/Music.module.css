@@ -28,6 +28,11 @@
   align-items: center;
 }
 
+.musicLink {
+  width: 100%;
+  text-align: center;
+}
+
 .musicCover {
   width: 50%;
   border-radius: 15px;

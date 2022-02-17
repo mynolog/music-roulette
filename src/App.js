@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { Music, Chart, LoaderBar, Header } from './components/'
+import { Music, MusicDetail, Chart, LoaderBar, Header } from './components/'
 import { fetchCharts } from './api'
 import { makeRandomNumber } from './lib/makeRandomNumber'
 import { countryCodeList, topLimit } from './constant'
@@ -50,7 +50,7 @@ function App() {
       <Routes>
         <>
           <Route
-            path={`${BASE_URL}`}
+            path={`${BASE_URL}/*`}
             element={
               <Music
                 getRandomMusic={getRandomMusic}
@@ -63,6 +63,7 @@ function App() {
               />
             }
           />
+          <Route path={`${BASE_URL}/music/:id`} element={<MusicDetail />} />
           <Route
             path={`${BASE_URL}/chart`}
             element={<Chart charts={charts} query={query} />}

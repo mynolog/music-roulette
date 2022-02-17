@@ -1,0 +1,74 @@
+.musicDetailContainer {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin: 80px auto;
+}
+
+.musicDetailBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.musicDetailCover {
+  width: 300px;
+  margin: 15px 10px;
+  border-radius: 10px;
+}
+
+.musicDetailContents {
+  display: flex;
+  flex-direction: column;
+}
+
+.musicDetailTitle {
+  font-size: 1.2rem;
+  margin: 15px 10px;
+}
+
+.musicDetailArtist {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+.musicDetailArtistImg {
+  width: 80px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.musicDetailArtistEmptyImg {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 15px;
+  background-color: dimgrey;
+  display: flex;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+}
+
+.musicDetailGenres {
+  font-size: 1.1rem;
+  margin: 15px;
+}
+
+.musicDetailLylics {
+  display: none;
+  transition: 1s linear;
+  margin: 15px;
+  font-size: 0.8rem;
+}
+.musicDetailLylics.show {
+  display: block;
+  transition: 1s linear;
+  margin: 15px;
+}
+.musicDetailLylicsItem {
+  padding: 4px 8px;
+}

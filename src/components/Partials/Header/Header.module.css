@@ -10,8 +10,12 @@
   padding: 30px;
 }
 
+.headerTitle {
+  font-size: 1.3rem;
+}
+
 .navListItem {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   margin: 0 10px;
   text-transform: uppercase;
   padding: 10px 15px;

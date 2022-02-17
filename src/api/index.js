@@ -20,3 +20,18 @@ export const fetchCharts = async (countryCode, limit) => {
     console.log(err)
   }
 }
+
+export const fetchMusicDetail = async (id) => {
+  const options = {
+    method: 'get',
+    url: '/tracks/details',
+    params: { track_id: id },
+  }
+
+  try {
+    const { data } = await axios.request(options)
+    return data
+  } catch (err) {
+    console.log(err)
+  }
+}

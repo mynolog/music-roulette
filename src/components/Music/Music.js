@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { SelectBox, Button } from '../'
 
 import styles from './Music.module.css'
@@ -11,17 +12,23 @@ function Music({
   countryCodeList,
   topLimit,
 }) {
+  const { REACT_APP_BASE_URL: BASE_URL } = process.env
   return (
     <div className={styles.musicContainer}>
       {isStandBy && (
         <div className={styles.musicBox}>
           <>
             <div className={styles.musicContents}>
-              <img
-                className={styles.musicCover}
-                src={randomMusic.images.coverart}
-                alt={randomMusic.subtitle}
-              />
+              <Link
+                className={styles.musicLink}
+                to={`/${BASE_URL}/music/${randomMusic.id}`}
+              >
+                <img
+                  className={styles.musicCover}
+                  src={randomMusic.images.coverart}
+                  alt={randomMusic.subtitle}
+                />
+              </Link>
               <span className={styles.musicTitle}>{randomMusic.title}</span>
               <span className={styles.musicArtist}>{randomMusic.subtitle}</span>
             </div>

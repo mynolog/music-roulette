@@ -14,7 +14,7 @@ function Header() {
 
   return (
     <header className={styles.headerContainer}>
-      <h1>Music Roulette</h1>
+      <h1 className={styles.headerTitle}>Music Roulette</h1>
       <nav>
         <ul>
           {HeaderContent.map((navList, index) => (
