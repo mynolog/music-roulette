@@ -1,5 +1,5 @@
 .chartContainer {
-  width: 100%;
+  width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -7,11 +7,15 @@
   align-items: center;
   color: #fff;
   overflow: auto;
-  margin: 80px 0;
+  margin: 80px auto;
 }
 
 .chartTitle {
   margin-bottom: 20px;
+}
+
+.chartListItem {
+  padding: 10px 0;
 }
 
 .chartListItem:nth-child(even) {
