@@ -7,6 +7,7 @@
   align-items: center;
   color: #fff;
   overflow: auto;
+  margin-top: 80px;
 }
 
 .chartListItem:nth-child(even) {

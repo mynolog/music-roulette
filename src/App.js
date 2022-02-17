@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { Music, Chart, LoaderBar } from './components/'
+import { Music, Chart, LoaderBar, Header } from './components/'
 import { fetchCharts } from './api'
 import { makeRandomNumber } from './lib/makeRandomNumber'
 import { countryCodeList, topLimit } from './constant'
@@ -45,6 +45,7 @@ function App() {
   return (
     <div className="appContainer">
       {isLoading && <LoaderBar />}
+      <Header />
       <Routes>
         <>
           <Route
