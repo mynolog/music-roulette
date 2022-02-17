@@ -10,6 +10,7 @@ function App() {
   const [randomMusic, setRandomMusic] = useState('')
   const [query, setQuery] = useState({
     currentCountryCode: 'KR',
+    label: 'South Korea',
     limit: 100,
   })
   const [isLoading, setIsLoading] = useState(true)
@@ -64,7 +65,7 @@ function App() {
           />
           <Route
             path={`${BASE_URL}/chart`}
-            element={<Chart charts={charts} />}
+            element={<Chart charts={charts} query={query} />}
           />
         </>
       </Routes>

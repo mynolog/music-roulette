@@ -24,6 +24,7 @@ function Header() {
                 currentIndex === index ? styles.activeTab : ''
               }`}
               onClick={() => onChangeTab(index)}
+              key={navList.id}
             >
               {navList.title}
             </NavLink>
