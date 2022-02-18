@@ -63,6 +63,16 @@ function MusicDetail() {
             <span className={styles.musicDetailGenres}>
               {detail.genres.primary}
             </span>
+            <Button
+              onClick={() => window.open(detail.apple_music_url)}
+              bgColor="FA576A"
+              value="Apple Music"
+            />
+            <Button
+              onClick={() => window.open(detail.url)}
+              bgColor="0088FF"
+              value="Shazam"
+            />
 
             {typeof detail.sections !== 'undefined' && (
               <>

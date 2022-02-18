@@ -27,6 +27,7 @@ function App() {
 
   useEffect(() => {
     getCharts()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const getRandomMusic = () => {
