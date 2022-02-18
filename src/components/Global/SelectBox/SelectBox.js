@@ -31,6 +31,7 @@ function SelectBox({ query, setQuery, options, type }) {
           </option>
         ))}
       </select>
+      <div className={styles.arrowButton}></div>
     </div>
   )
 }

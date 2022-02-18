@@ -57,7 +57,13 @@
 }
 
 .selectBox {
+  width: 300px;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  padding: 15px 10px;
 }
 
 .rouletteButton {
@@ -67,6 +73,7 @@
   height: 50px;
   border-radius: 20px;
   padding: 10px;
+  margin-top: 15px;
   background-color: azure;
   color: #6b54bf;
   font-size: 1.2rem;

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { SelectBox, Button } from '../'
 
@@ -56,20 +55,22 @@ function Music({
       )}
 
       <div className={styles.selectBox}>
-        {/* setCountryCode */}
-        <SelectBox
-          query={query}
-          setQuery={setQuery}
-          options={countryCodeList}
-          type="country"
-        />
-        {/* setLimit */}
-        <SelectBox
-          query={query}
-          setQuery={setQuery}
-          options={topLimit}
-          type="limit"
-        />
+        <div className={styles.selectArea}>
+          {/* setCountryCode */}
+          <SelectBox
+            query={query}
+            setQuery={setQuery}
+            options={countryCodeList}
+            type="country"
+          />
+          {/* setLimit */}
+          <SelectBox
+            query={query}
+            setQuery={setQuery}
+            options={topLimit}
+            type="limit"
+          />
+        </div>
         <Button onClick={onChangeOption} bgColor="EC407A" value="Apply" />
       </div>
       <button className={styles.rouletteButton} onClick={getRandomMusic}>
