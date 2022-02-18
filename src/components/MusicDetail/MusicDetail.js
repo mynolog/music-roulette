@@ -36,6 +36,14 @@ function MusicDetail() {
               alt={detail.title}
             />
           )}
+          {/*TODO: 미리 듣기 컨트롤러 스타일 변경 */}
+          {detail.hub?.actions[1].uri && (
+            <audio
+              className={styles.musicDetailPreview}
+              controls
+              src={detail.hub.actions[1].uri}
+            />
+          )}
           <div className={styles.musicDetailContents}>
             <h2 className={styles.musicDetailTitle}>{detail.title}</h2>
             <div className={styles.musicDetailArtist}>

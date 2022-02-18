@@ -33,6 +33,11 @@
   text-align: center;
 }
 
+.musicDetailPreview {
+  width: 300px;
+  margin: 15px 10px;
+}
+
 .musicDetailContents {
   display: flex;
   flex-direction: column;
