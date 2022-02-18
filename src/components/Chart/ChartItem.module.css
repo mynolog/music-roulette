@@ -17,6 +17,19 @@
   border-radius: 10px;
 }
 
+.chartItemEmptyCover {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  margin: 0 10px;
+  background-color: dimgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.7rem;
+}
+
 .chartItemContents {
   display: flex;
   flex-direction: column;

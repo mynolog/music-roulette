@@ -26,11 +26,16 @@ function MusicDetail() {
         <LoaderBar />
       ) : (
         <div className={styles.musicDetailBox}>
-          <img
-            className={styles.musicDetailCover}
-            src={detail.images.coverart}
-            alt={detail.title}
-          />
+          {!detail.images && (
+            <div className={styles.musicDetailEmptyCover}>No Images</div>
+          )}
+          {detail.images?.coverart && (
+            <img
+              className={styles.musicDetailCover}
+              src={detail.images.coverart}
+              alt={detail.title}
+            />
+          )}
           <div className={styles.musicDetailContents}>
             <h2 className={styles.musicDetailTitle}>{detail.title}</h2>
             <div className={styles.musicDetailArtist}>

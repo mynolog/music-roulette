@@ -21,6 +21,18 @@
   border-radius: 10px;
 }
 
+.musicDetailEmptyCover {
+  width: 300px;
+  height: 300px;
+  margin: 15px 10px;
+  border-radius: 10px;
+  background-color: dimgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .musicDetailContents {
   display: flex;
   flex-direction: column;

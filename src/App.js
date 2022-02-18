@@ -66,7 +66,9 @@ function App() {
           <Route path={`${BASE_URL}/music/:id`} element={<MusicDetail />} />
           <Route
             path={`${BASE_URL}/chart`}
-            element={<Chart charts={charts} query={query} />}
+            element={
+              <Chart charts={charts} query={query} isLoading={isLoading} />
+            }
           />
         </>
       </Routes>
