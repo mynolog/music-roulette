@@ -1,20 +1,32 @@
 import styles from './SelectBox.module.css'
 
-function SelectBox({ query, setQuery, options }) {
+function SelectBox({ query, setQuery, options, type }) {
   const onSelect = (event) => {
     const {
-      target: { value },
+      target: { value, options, selectedIndex },
     } = event
-    typeof options[0].value === 'string'
-      ? setQuery({ ...query, currentCountryCode: value })
-      : setQuery({ ...query, limit: Number(value) })
+
+    switch (type) {
+      case 'country':
+        const country = options[selectedIndex].getAttribute('data-country')
+        setQuery({ ...query, currentCountryCode: value, label: country })
+        break
+      case 'limit':
+        setQuery({ ...query, limit: value })
+        break
+      default:
+    }
   }
 
   return (
     <div className={styles.selectBoxContainer}>
       <select onChange={onSelect} className={styles.selectBox}>
         {options.map((option) => (
-          <option key={option.value} value={option.value}>
+          <option
+            key={option.value}
+            value={option.value}
+            data-country={option.label}
+          >
             {option.label}
           </option>
         ))}

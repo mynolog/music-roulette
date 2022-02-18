@@ -18,15 +18,16 @@ function App() {
 
   const { currentCountryCode, limit } = query
 
+  const getCharts = async () => {
+    setIsLoading(true)
+    const fetchedCharts = await fetchCharts(currentCountryCode, limit)
+    setCharts(fetchedCharts)
+    setIsLoading(false)
+  }
+
   useEffect(() => {
-    const getCharts = async () => {
-      setIsLoading(true)
-      const fetchedCharts = await fetchCharts(currentCountryCode, limit)
-      setCharts(fetchedCharts)
-      setIsLoading(false)
-    }
     getCharts()
-  }, [currentCountryCode, limit])
+  }, [])
 
   const getRandomMusic = () => {
     setIsStandBy(false)
@@ -60,6 +61,7 @@ function App() {
                 countryCodeList={countryCodeList}
                 topLimit={topLimit}
                 isStandBy={isStandBy}
+                getCharts={getCharts}
               />
             }
           />

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { SelectBox, Button } from '../'
 
@@ -11,8 +12,14 @@ function Music({
   setQuery,
   countryCodeList,
   topLimit,
+  getCharts,
 }) {
   const { REACT_APP_BASE_URL: BASE_URL } = process.env
+
+  const onChangeOption = () => {
+    getCharts()
+  }
+
   return (
     <div className={styles.musicContainer}>
       {isStandBy && (
@@ -54,9 +61,16 @@ function Music({
           query={query}
           setQuery={setQuery}
           options={countryCodeList}
+          type="country"
         />
         {/* setLimit */}
-        <SelectBox query={query} setQuery={setQuery} options={topLimit} />
+        <SelectBox
+          query={query}
+          setQuery={setQuery}
+          options={topLimit}
+          type="limit"
+        />
+        <Button onClick={onChangeOption} bgColor="EC407A" value="Apply" />
       </div>
       <button className={styles.rouletteButton} onClick={getRandomMusic}>
         Shake it!
