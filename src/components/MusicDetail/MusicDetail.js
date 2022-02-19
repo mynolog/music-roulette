@@ -20,6 +20,9 @@ function MusicDetail() {
     setToggleLyrics(!toggleLyrics)
   }
 
+  console.log(detail)
+  console.log(typeof detail.hub?.actions)
+
   return (
     <div className={styles.musicDetailContainer}>
       {typeof detail.images === 'undefined' ? (
@@ -37,13 +40,20 @@ function MusicDetail() {
             />
           )}
           {/*TODO: 미리 듣기 컨트롤러 스타일 변경 */}
-          {detail.hub?.actions[1].uri && (
-            <audio
-              className={styles.musicDetailPreview}
-              controls
-              src={detail.hub.actions[1].uri}
-            />
+          {typeof detail.hub?.actions === 'undefined' ? (
+            <div>미리 듣기 음원 없음</div>
+          ) : (
+            <>
+              {detail.hub?.actions[1].uri && (
+                <audio
+                  className={styles.musicDetailPreview}
+                  controls
+                  src={detail.hub.actions[1].uri}
+                />
+              )}
+            </>
           )}
+
           <div className={styles.musicDetailContents}>
             <h2 className={styles.musicDetailTitle}>{detail.title}</h2>
             <div className={styles.musicDetailArtist}>
@@ -68,9 +78,13 @@ function MusicDetail() {
                 </>
               )}
             </div>
-            <span className={styles.musicDetailGenres}>
-              {detail.genres.primary}
-            </span>
+            {typeof detail.genres?.primary === 'undefined' ? (
+              <div>장르 정보 없음</div>
+            ) : (
+              <span className={styles.musicDetailGenres}>
+                {detail.genres.primary}
+              </span>
+            )}
             <Button
               onClick={() => window.open(detail.apple_music_url)}
               bgColor="FA576A"
