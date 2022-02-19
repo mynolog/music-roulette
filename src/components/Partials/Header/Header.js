@@ -12,11 +12,14 @@ function Header() {
     setCurrentIndex(index)
   }
 
+  const onGoHome = () => navigate(`/${BASE_URL}/`)
   const onGoBack = () => navigate(-1)
 
   return (
     <header className={styles.headerContainer}>
-      <h1 className={styles.headerTitle}>Music Roulette</h1>
+      <h1 className={styles.headerTitle} onClick={onGoHome}>
+        Music Roulette
+      </h1>
       <div className={styles.arrowButton} onClick={onGoBack}></div>
       <nav>
         <ul>
