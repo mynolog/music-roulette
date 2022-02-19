@@ -10,7 +10,7 @@
 
 .musicBox {
   width: 300px;
-  height: 350px;
+  height: 370px;
   border-radius: 20px;
   border: 1px solid white;
   margin-bottom: 10px;
@@ -29,7 +29,6 @@
 }
 
 .musicLink {
-  width: 100%;
   text-align: center;
 }
 
@@ -37,16 +36,41 @@
   width: 50%;
   border-radius: 15px;
   margin-bottom: 10px;
+  transition: 0.2s ease-in-out;
+}
+.musicCover:hover {
+  transform: scale(1.125);
+  transition: 0.4s ease-in-out;
 }
 
 .musicTitle {
+  width: 100%;
   font-size: 1.1rem;
-  margin-bottom: 6px;
+  margin: 7px 0;
+  text-align: center;
+  transition: 0.3s linear;
+}
+.musicTitle:hover {
+  color: #6b54bf;
+  background-color: aliceblue;
+  padding: 4px 10px;
+  transition: 0.3s linear;
+  border-radius: 15px;
 }
 
 .musicArtist {
   font-size: 0.9rem;
   font-style: italic;
+  margin: 7px 0;
+  text-align: center;
+  transition: 0.3s linear;
+}
+.musicArtist:hover {
+  color: #6b54bf;
+  background-color: aliceblue;
+  padding: 4px 10px;
+  transition: 0.3s linear;
+  border-radius: 15px;
 }
 
 .musicUrls {

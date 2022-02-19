@@ -35,8 +35,13 @@ function Music({
                   alt={randomMusic.subtitle}
                 />
               </Link>
-              <span className={styles.musicTitle}>{randomMusic.title}</span>
-              <span className={styles.musicArtist}>{randomMusic.subtitle}</span>
+              <Link
+                className={styles.musicLink}
+                to={`/${BASE_URL}/music/${randomMusic.id}`}
+              >
+                <div className={styles.musicTitle}>{randomMusic.title}</div>
+              </Link>
+              <div className={styles.musicArtist}>{randomMusic.subtitle}</div>
             </div>
             <div className={styles.musicUrls}>
               <Button
