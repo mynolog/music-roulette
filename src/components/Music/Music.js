@@ -41,7 +41,18 @@ function Music({
               >
                 <div className={styles.musicTitle}>{randomMusic.title}</div>
               </Link>
-              <div className={styles.musicArtist}>{randomMusic.subtitle}</div>
+              {randomMusic.artists === null ? (
+                <div className={styles.musicArtist}>{randomMusic.subtitle}</div>
+              ) : (
+                <Link
+                  className={styles.artistLink}
+                  to={`/${BASE_URL}/artist/${randomMusic.artists[0].id}`}
+                >
+                  <div className={styles.musicArtist}>
+                    {randomMusic.subtitle}
+                  </div>
+                </Link>
+              )}
             </div>
             <div className={styles.musicUrls}>
               <Button

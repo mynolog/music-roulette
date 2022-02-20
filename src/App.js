@@ -4,6 +4,7 @@ import { Music, MusicDetail, Chart, LoaderBar, Header } from './components/'
 import { fetchCharts } from './api'
 import { makeRandomNumber } from './lib/makeRandomNumber'
 import { countryCodeList, topLimit } from './constant'
+import ArtistDetail from './components/ArtistDetail/ArtistDetail'
 
 function App() {
   const [charts, setCharts] = useState([])
@@ -29,7 +30,6 @@ function App() {
     getCharts()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
   const getRandomMusic = () => {
     setIsStandBy(false)
     if (typeof charts === 'undefined') {
@@ -52,7 +52,7 @@ function App() {
       <Routes>
         <>
           <Route
-            path={`${BASE_URL}/*`}
+            path={`${BASE_URL}/`}
             element={
               <Music
                 getRandomMusic={getRandomMusic}
@@ -73,6 +73,7 @@ function App() {
               <Chart charts={charts} query={query} isLoading={isLoading} />
             }
           />
+          <Route path={`${BASE_URL}/artist/:id`} element={<ArtistDetail />} />
         </>
       </Routes>
     </div>

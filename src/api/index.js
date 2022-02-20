@@ -35,3 +35,33 @@ export const fetchMusicDetail = async (id) => {
     console.log(err)
   }
 }
+
+export const fetchArtistDetail = async (id) => {
+  const options = {
+    method: 'get',
+    url: '/artists/details',
+    params: { artist_id: id },
+  }
+
+  try {
+    const { data } = await axios.request(options)
+    return data
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export const fetchRelatedTracks = async (id) => {
+  const options = {
+    method: 'get',
+    url: '/artists/tracks',
+    params: { artist_id: id },
+  }
+
+  try {
+    const { data } = await axios.request(options)
+    return data
+  } catch (err) {
+    console.log(err)
+  }
+}

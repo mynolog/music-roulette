@@ -1,0 +1,18 @@
+.trackItem {
+  display: flex;
+  height: 60px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px;
+}
+
+.trackItem:nth-child(even) {
+  background-color: #262626;
+  border-radius: 10px;
+}
+
+.trackCover {
+  width: 50px;
+  border-radius: 10px;
+  margin-right: 15px;
+}

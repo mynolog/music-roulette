@@ -20,9 +20,6 @@ function MusicDetail() {
     setToggleLyrics(!toggleLyrics)
   }
 
-  console.log(detail)
-  console.log(typeof detail.hub?.actions)
-
   return (
     <div className={styles.musicDetailContainer}>
       {typeof detail.images === 'undefined' ? (
