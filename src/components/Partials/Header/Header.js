@@ -3,8 +3,6 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { HeaderContent } from './HeaderContent'
 import styles from './Header.module.css'
 
-const { REACT_APP_BASE_URL: BASE_URL } = process.env
-
 function Header() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const navigate = useNavigate()
@@ -12,7 +10,7 @@ function Header() {
     setCurrentIndex(index)
   }
 
-  const onGoHome = () => navigate(`/${BASE_URL}/`)
+  const onGoHome = () => navigate(`/`)
   const onGoBack = () => navigate(-1)
 
   return (
@@ -25,7 +23,7 @@ function Header() {
         <ul>
           {HeaderContent.map((navList, index) => (
             <NavLink
-              to={BASE_URL + navList.to}
+              to={navList.to}
               className={`${styles.navListItem} ${
                 currentIndex === index ? styles.activeTab : ''
               }`}

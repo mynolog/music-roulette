@@ -2,13 +2,12 @@ import { Link } from 'react-router-dom'
 import styles from './ChartItem.module.css'
 
 function ChartItem({ musicInfo, index }) {
-  const { REACT_APP_BASE_URL: BASE_URL } = process.env
   const { id, title, subtitle, images } = musicInfo
   const rank = index + 1
   return (
     <div className={styles.chartItemContainer}>
       <span className={styles.chartItemRank}>{rank}</span>
-      <Link to={`/${BASE_URL}/music/${id}`}>
+      <Link to={`/music/${id}`}>
         {!images && <div className={styles.chartItemEmptyCover}>No Images</div>}
         {images?.background && (
           <>

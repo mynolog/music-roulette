@@ -16,7 +16,6 @@ function App() {
   })
   const [isLoading, setIsLoading] = useState(true)
   const [isStandBy, setIsStandBy] = useState(false)
-
   const { currentCountryCode, limit } = query
 
   const getCharts = async () => {
@@ -30,6 +29,7 @@ function App() {
     getCharts()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
   const getRandomMusic = () => {
     setIsStandBy(false)
     if (typeof charts === 'undefined') {
@@ -43,8 +43,6 @@ function App() {
     setIsStandBy(true)
   }
 
-  const { REACT_APP_BASE_URL: BASE_URL } = process.env
-
   return (
     <div className="appContainer">
       {isLoading && <LoaderBar />}
@@ -52,7 +50,7 @@ function App() {
       <Routes>
         <>
           <Route
-            path={`${BASE_URL}/`}
+            path={`/`}
             element={
               <Music
                 getRandomMusic={getRandomMusic}
@@ -66,14 +64,14 @@ function App() {
               />
             }
           />
-          <Route path={`${BASE_URL}/music/:id`} element={<MusicDetail />} />
+          <Route path={`/music/:id`} element={<MusicDetail />} />
           <Route
-            path={`${BASE_URL}/chart`}
+            path={`/chart`}
             element={
               <Chart charts={charts} query={query} isLoading={isLoading} />
             }
           />
-          <Route path={`${BASE_URL}/artist/:id`} element={<ArtistDetail />} />
+          <Route path={`/artist/:id`} element={<ArtistDetail />} />
         </>
       </Routes>
     </div>

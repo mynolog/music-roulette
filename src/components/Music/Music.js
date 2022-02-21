@@ -13,8 +13,6 @@ function Music({
   topLimit,
   getCharts,
 }) {
-  const { REACT_APP_BASE_URL: BASE_URL } = process.env
-
   const onChangeOption = () => {
     getCharts()
   }
@@ -27,7 +25,7 @@ function Music({
             <div className={styles.musicContents}>
               <Link
                 className={styles.musicLink}
-                to={`/${BASE_URL}/music/${randomMusic.id}`}
+                to={`/music/${randomMusic.id}`}
               >
                 <img
                   className={styles.musicCover}
@@ -37,7 +35,7 @@ function Music({
               </Link>
               <Link
                 className={styles.musicLink}
-                to={`/${BASE_URL}/music/${randomMusic.id}`}
+                to={`/music/${randomMusic.id}`}
               >
                 <div className={styles.musicTitle}>{randomMusic.title}</div>
               </Link>
@@ -46,7 +44,7 @@ function Music({
               ) : (
                 <Link
                   className={styles.artistLink}
-                  to={`/${BASE_URL}/artist/${randomMusic.artists[0].id}`}
+                  to={`/artist/${randomMusic.artists[0].id}`}
                 >
                   <div className={styles.musicArtist}>
                     {randomMusic.subtitle}
