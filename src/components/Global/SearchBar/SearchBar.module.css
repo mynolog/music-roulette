@@ -1,3 +1,15 @@
+@media screen and (max-width: 768px) {
+  .searchBar {
+    border-radius: 10px;
+    width: 100px;
+    font-size: 0.4rem !important;
+    text-indent: 5px !important;
+  }
+  .searchButton {
+    display: none;
+  }
+}
+
 .searchBarContainer {
   height: 100%;
   position: relative;
