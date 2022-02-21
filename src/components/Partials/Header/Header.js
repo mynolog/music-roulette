@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { BiSearchAlt } from 'react-icons/bi'
 import { HeaderContent } from './HeaderContent'
 import { SearchBar } from '../../'
 import styles from './Header.module.css'
@@ -14,10 +13,6 @@ function Header({ search, setSearch, setSearchResult }) {
     setCurrentIndex(index)
   }
 
-  // const onToggleSearch = () => {
-  //   setToggleSearch(!toggleSearch)
-  // }
-
   const onGoHome = () => navigate(`/`)
   const onGoBack = () => navigate(-1)
 
@@ -29,9 +24,6 @@ function Header({ search, setSearch, setSearchResult }) {
       <div className={styles.arrowButton} onClick={onGoBack}></div>
       <nav>
         <ul className={styles.navList}>
-          {/* <li className={styles.navListItem} onClick={onToggleSearch}>
-            <BiSearchAlt size={25} />
-          </li> */}
           <li className={`${styles.navListItem} ${styles.navSearchBar}`}>
             <SearchBar
               search={search}

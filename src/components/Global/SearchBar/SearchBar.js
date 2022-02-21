@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { fetchSearchResult } from '../../../api'
 import styles from './SearchBar.module.css'
@@ -6,7 +6,6 @@ import styles from './SearchBar.module.css'
 function SearchBar({ search, setSearch, setSearchResult }) {
   const [error, setError] = useState(null)
   const navigate = useNavigate()
-  const input = useRef()
 
   const getSearchResult = async () => {
     const fetchedSearchResult = await fetchSearchResult(search)
