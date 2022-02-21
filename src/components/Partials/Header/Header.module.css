@@ -40,6 +40,12 @@
   transform: rotate(225deg); /* 각도 */
 }
 
+.navList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .navListItem {
   font-size: 0.9rem;
   margin: 0 10px;
@@ -53,4 +59,13 @@
   background-color: azure;
   border-radius: 15px;
   transition: 0.2s ease-in-out;
+}
+
+.navSearchBar {
+  display: block;
+  transition: all 0.4s ease-in;
+}
+
+.navSearchBar.show {
+  display: block;
 }

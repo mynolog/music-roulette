@@ -1,19 +1,28 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { Music, MusicDetail, Chart, LoaderBar, Header } from './components/'
+import {
+  ArtistDetail,
+  Music,
+  MusicDetail,
+  Chart,
+  LoaderBar,
+  Header,
+  SearchResult,
+} from './components/'
 import { fetchCharts } from './api'
 import { makeRandomNumber } from './lib/makeRandomNumber'
 import { countryCodeList, topLimit } from './constant'
-import ArtistDetail from './components/ArtistDetail/ArtistDetail'
 
 function App() {
   const [charts, setCharts] = useState([])
-  const [randomMusic, setRandomMusic] = useState('')
+  const [randomMusic, setRandomMusic] = useState({})
   const [query, setQuery] = useState({
     currentCountryCode: 'KR',
     label: 'South Korea',
     limit: 100,
   })
+  const [search, setSearch] = useState('')
+  const [searchResult, setSearchResult] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [isStandBy, setIsStandBy] = useState(false)
   const { currentCountryCode, limit } = query
@@ -46,7 +55,11 @@ function App() {
   return (
     <div className="appContainer">
       {isLoading && <LoaderBar />}
-      <Header />
+      <Header
+        search={search}
+        setSearch={setSearch}
+        setSearchResult={setSearchResult}
+      />
       <Routes>
         <>
           <Route
@@ -72,6 +85,16 @@ function App() {
             }
           />
           <Route path={`/artist/:id`} element={<ArtistDetail />} />
+          <Route
+            path={`/search/:query`}
+            element={
+              <SearchResult
+                search={search}
+                searchResult={searchResult}
+                setSearchResult={setSearchResult}
+              />
+            }
+          />
         </>
       </Routes>
     </div>

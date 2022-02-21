@@ -1,0 +1,41 @@
+.searchResultContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin: 80px 0;
+}
+
+.searchList {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.searchListItem {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.searchListItem:nth-child(even) {
+  background-color: #262626;
+  border-radius: 10px;
+}
+
+.artistCover {
+  width: 70px;
+  border-radius: 50%;
+  margin: 5px 15px;
+}
+
+.artistCoverEmpty {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 5px 15px;
+  background-color: dimgrey;
+}

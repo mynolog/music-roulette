@@ -66,3 +66,18 @@ export const fetchRelatedTracks = async (id) => {
     console.log(err)
   }
 }
+
+export const fetchSearchResult = async (search) => {
+  const options = {
+    method: 'get',
+    url: '/artists/search',
+    params: { query: search },
+  }
+
+  try {
+    const { data } = await axios.request(options)
+    return data
+  } catch (err) {
+    console.log(err)
+  }
+}
