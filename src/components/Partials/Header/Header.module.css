@@ -2,6 +2,10 @@
   .headerTitle {
     display: none;
   }
+
+  .navListItem {
+    font-size: 0.7rem !important;
+  }
 }
 
 .headerContainer {
