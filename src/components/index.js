@@ -11,3 +11,5 @@ export { default as Chart } from './Chart/Chart'
 export { default as RelatedTracks } from './RelatedTracks/RelatedTracks'
 export { default as ArtistDetail } from './ArtistDetail/ArtistDetail'
 export { default as SearchResult } from './SearchResult/SearchResult'
+
+export { default as PageNotFound } from './PageNotFound/PageNotFound'

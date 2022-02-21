@@ -8,6 +8,7 @@ import {
   LoaderBar,
   Header,
   SearchResult,
+  PageNotFound,
 } from './components/'
 import { fetchCharts } from './api'
 import { makeRandomNumber } from './lib/makeRandomNumber'
@@ -95,6 +96,7 @@ function App() {
               />
             }
           />
+          <Route path="/*" element={<PageNotFound />} />
         </>
       </Routes>
     </div>
