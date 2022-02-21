@@ -5,6 +5,7 @@ axios.defaults.headers = {
   'x-rapidapi-host': process.env.REACT_APP_HOST,
   'x-rapidapi-key': process.env.REACT_APP_API_KEY,
 }
+axios.defaults.withCredentials = true
 
 export const fetchCharts = async (countryCode, limit) => {
   const options = {
