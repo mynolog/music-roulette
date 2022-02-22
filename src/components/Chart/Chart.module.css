@@ -22,3 +22,24 @@
   background-color: #262626;
   border-radius: 10px;
 }
+
+.selectBox {
+  width: 50%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  padding: 10px 15px;
+  margin-bottom: 25px;
+}
+
+.selectArea {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

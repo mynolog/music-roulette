@@ -6,7 +6,6 @@ function LoaderBar() {
       <div className={styles.loaderBar}>
         <div className={styles.loaderStatus}></div>
       </div>
-      <span className={styles.loaderContent}>음악 리스트 불러오는 중...</span>
     </div>
   )
 }

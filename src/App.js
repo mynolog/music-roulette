@@ -20,7 +20,7 @@ function App() {
   const [query, setQuery] = useState({
     currentCountryCode: 'KR',
     label: 'South Korea',
-    limit: 100,
+    limit: 50,
   })
   const [search, setSearch] = useState('')
   const [searchResult, setSearchResult] = useState([])
@@ -78,7 +78,15 @@ function App() {
           <Route
             path={`/chart`}
             element={
-              <Chart charts={charts} query={query} isLoading={isLoading} />
+              <Chart
+                charts={charts}
+                getCharts={getCharts}
+                query={query}
+                setQuery={setQuery}
+                isLoading={isLoading}
+                countryCodeList={countryCodeList}
+                topLimit={topLimit}
+              />
             }
           />
           <Route path={`/artist/:id`} element={<ArtistDetail />} />

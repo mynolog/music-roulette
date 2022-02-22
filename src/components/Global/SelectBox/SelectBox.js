@@ -20,7 +20,14 @@ function SelectBox({ query, setQuery, options, type }) {
 
   return (
     <div className={styles.selectBoxContainer}>
-      <select onChange={onSelect} className={styles.selectBox}>
+      <select
+        key={type === 'country' ? query.currentCountryCode : query.limit}
+        defaultValue={
+          type === 'country' ? query.currentCountryCode : query.limit
+        }
+        onChange={onSelect}
+        className={styles.selectBox}
+      >
         {options.map((option) => (
           <option
             key={option.value}
