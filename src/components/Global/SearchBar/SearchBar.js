@@ -1,32 +1,23 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './SearchBar.module.css'
 
 function SearchBar({ search, setSearch }) {
   const [error, setError] = useState(null)
   const navigate = useNavigate()
-
-  const koreanRegex = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/
-  let isKorean
+  const input = useRef()
   const onChange = (event) => {
-    const {
-      target: { value },
-    } = event
-    isKorean = koreanRegex.test(value)
-    // if (isKorean) {
-    //   setError('영문 검색만 가능합니다.')
-    //   setSearch('')
-    // }
     setSearch(event.target.value)
   }
-  const onSubmit = (event) => {
+
+  const onSubmit = () => {
     if (search.length < 3) {
       setError('최소 3자 이상 입력하세요.')
     }
     if (search.length > 2) {
       setError(null)
       navigate(`/search/?artist=${search}`)
-      setSearch('')
+      input.current.focus()
     }
   }
 
@@ -39,6 +30,7 @@ function SearchBar({ search, setSearch }) {
   return (
     <div className={styles.searchBarContainer}>
       <input
+        ref={input}
         type="text"
         placeholder="Search for Artists"
         value={search}
