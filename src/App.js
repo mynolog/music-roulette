@@ -56,11 +56,7 @@ function App() {
   return (
     <div className="appContainer">
       {isLoading && <LoaderBar />}
-      <Header
-        search={search}
-        setSearch={setSearch}
-        setSearchResult={setSearchResult}
-      />
+      <Header search={search} setSearch={setSearch} />
       <Routes>
         <>
           <Route
@@ -87,10 +83,9 @@ function App() {
           />
           <Route path={`/artist/:id`} element={<ArtistDetail />} />
           <Route
-            path={`/search/:query`}
+            path={`/search/*`}
             element={
               <SearchResult
-                search={search}
                 searchResult={searchResult}
                 setSearchResult={setSearchResult}
               />

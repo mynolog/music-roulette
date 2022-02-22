@@ -1,7 +1,27 @@
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import qs from 'qs'
+import { fetchSearchResult } from '../../api'
 import styles from './SearchResult.module.css'
 
-function SearchResult({ searchResult }) {
+function SearchResult({ searchResult, setSearchResult }) {
+  const location = useLocation()
+  const { artist } = qs.parse(location.search, {
+    ignoreQueryPrefix: true,
+  })
+
+  useEffect(
+    () => {
+      const getSearchResult = async () => {
+        const fetchedSearchResult = await fetchSearchResult(artist)
+        setSearchResult(fetchedSearchResult)
+      }
+      getSearchResult()
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  )
+
   return (
     <div className={styles.searchResultContainer}>
       <ul className={styles.searchList}>

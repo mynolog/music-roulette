@@ -4,7 +4,7 @@ import { HeaderContent } from './HeaderContent'
 import { SearchBar } from '../../'
 import styles from './Header.module.css'
 
-function Header({ search, setSearch, setSearchResult }) {
+function Header({ search, setSearch }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   // const [toggleSearch, setToggleSearch] = useState(false)
   const navigate = useNavigate()
@@ -25,11 +25,7 @@ function Header({ search, setSearch, setSearchResult }) {
       <nav>
         <ul className={styles.navList}>
           <li className={`${styles.navListItem} ${styles.navSearchBar}`}>
-            <SearchBar
-              search={search}
-              setSearch={setSearch}
-              setSearchResult={setSearchResult}
-            />
+            <SearchBar search={search} setSearch={setSearch} />
           </li>
           {HeaderContent.map((navList, index) => (
             <li

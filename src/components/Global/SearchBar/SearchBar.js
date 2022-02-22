@@ -7,10 +7,6 @@ function SearchBar({ search, setSearch, setSearchResult }) {
   const [error, setError] = useState(null)
   const navigate = useNavigate()
 
-  const getSearchResult = async () => {
-    const fetchedSearchResult = await fetchSearchResult(search)
-    setSearchResult(fetchedSearchResult)
-  }
   const onChange = (event) => {
     setSearch(event.target.value)
   }
@@ -20,8 +16,7 @@ function SearchBar({ search, setSearch, setSearchResult }) {
     }
     if (search.length > 2) {
       setError(null)
-      getSearchResult()
-      navigate(`/search/${search}`)
+      navigate(`/search/?artist=${search}`)
       setSearch('')
     }
   }
