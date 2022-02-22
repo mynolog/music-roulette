@@ -31,7 +31,7 @@ select {
 .arrowButton {
   position: relative;
   float: left;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   width: 10px;
   height: 10px;
   margin-right: 5px;
@@ -47,4 +47,19 @@ select {
   border-top: 2px solid #ec407a; /* 선 두께 */
   border-right: 2px solid #ec407a; /* 선 두께 */
   transform: rotate(135deg); /* 각도 */
+}
+
+@media screen and (max-width: 768px) {
+  select {
+    width: 100px;
+    font-size: 0.5rem;
+  }
+  .chartPage.arrowButton::after {
+    left: 82px;
+    top: -15px;
+  }
+  .mainPage.arrowButton::after {
+    left: 100px;
+    top: 15px;
+  }
 }

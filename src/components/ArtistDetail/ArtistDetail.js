@@ -7,29 +7,34 @@ import styles from './ArtistDetail.module.css'
 function ArtistDetail() {
   const [detail, setDetail] = useState({})
   const [relatedTracks, setRelatedTracks] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
+  const [loadingDetails, setLoadingDetails] = useState(true)
+  const [loadingTrack, setLoadingTracks] = useState(true)
+
   const { id } = useParams()
 
   useEffect(() => {
     const getDetails = async () => {
+      setLoadingDetails(true)
       const fetchedArtistDetail = await fetchArtistDetail(id)
       setDetail(fetchedArtistDetail)
+      setLoadingDetails(false)
     }
 
     const getTracks = async () => {
+      setLoadingTracks(true)
       const fetchedRelatedTracks = await fetchRelatedTracks(id)
       setRelatedTracks(fetchedRelatedTracks)
+      setLoadingTracks(false)
     }
-    setIsLoading(false)
     getDetails()
     getTracks()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id])
-
   return (
-    <div className={styles.artistDetailContainer}>
-      {isLoading ? (
-        <LoaderBar />
-      ) : (
+    <>
+      {loadingDetails && <LoaderBar />}
+      {loadingTrack && <LoaderBar />}
+      <div className={styles.artistDetailContainer}>
         <>
           <div className={styles.artistDetailBox}>
             {detail.avatar && (
@@ -75,8 +80,8 @@ function ArtistDetail() {
             <RelatedTracks relatedTracks={relatedTracks} />
           </div>
         </>
-      )}
-    </div>
+      </div>
+    </>
   )
 }
 

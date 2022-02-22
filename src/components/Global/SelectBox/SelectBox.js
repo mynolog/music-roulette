@@ -1,6 +1,8 @@
+import { useLocation } from 'react-router-dom'
 import styles from './SelectBox.module.css'
 
 function SelectBox({ query, setQuery, options, type }) {
+  const { pathname } = useLocation()
   const onSelect = (event) => {
     const {
       target: { value, options, selectedIndex },
@@ -38,7 +40,11 @@ function SelectBox({ query, setQuery, options, type }) {
           </option>
         ))}
       </select>
-      <div className={styles.arrowButton}></div>
+      <div
+        className={`${styles.arrowButton} ${
+          pathname === '/' && styles.mainPage
+        } ${pathname === '/chart' && styles.chartPage} `}
+      ></div>
     </div>
   )
 }

@@ -14,3 +14,15 @@
   transform: scale(0.9);
   transition: 0.3s ease-in;
 }
+
+@media screen and (max-width: 768px) {
+  .globalButton {
+    margin-left: 20px;
+    width: 60px;
+    height: 25px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -43,3 +43,19 @@
   align-items: center;
   justify-content: space-around;
 }
+
+@media screen and (max-width: 768px) {
+  .chartContainer {
+    width: 100%;
+    padding: 10px 15px;
+  }
+
+  .chartTitle {
+    font-size: 1.1rem;
+  }
+
+  .selectBox {
+    width: 100%;
+    border: none;
+  }
+}

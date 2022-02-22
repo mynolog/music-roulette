@@ -1,20 +1,16 @@
-import { useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate, useLocation } from 'react-router-dom'
 import { HeaderContent } from './HeaderContent'
 import { SearchBar } from '../../'
 import styles from './Header.module.css'
 
 function Header({ search, setSearch }) {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  // const [toggleSearch, setToggleSearch] = useState(false)
   const navigate = useNavigate()
-
-  const onChangeTab = (index) => {
-    setCurrentIndex(index)
-  }
+  const { pathname } = useLocation()
 
   const onGoHome = () => navigate(`/`)
-  const onGoBack = () => navigate(-1)
+  const onGoBack = () => {
+    navigate(-1)
+  }
 
   return (
     <header className={styles.headerContainer}>
@@ -30,9 +26,8 @@ function Header({ search, setSearch }) {
           {HeaderContent.map((navList, index) => (
             <li
               className={`${styles.navListItem} ${
-                currentIndex === index ? styles.activeTab : ''
+                pathname === navList.to ? styles.activeTab : ''
               }`}
-              onClick={() => onChangeTab(index)}
               key={navList.id}
             >
               <NavLink to={navList.to}>{navList.title}</NavLink>

@@ -1,13 +1,3 @@
-@media screen and (max-width: 768px) {
-  .headerTitle {
-    display: none;
-  }
-
-  .navListItem {
-    font-size: 0.7rem !important;
-  }
-}
-
 .headerContainer {
   width: 100%;
   height: 70px;
@@ -73,4 +63,18 @@
 
 .navSearchBar {
   display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .headerTitle {
+    display: none;
+  }
+
+  .navListItem {
+    font-size: 0.7rem;
+  }
+
+  .arrowButton::after {
+    left: 15px;
+  }
 }

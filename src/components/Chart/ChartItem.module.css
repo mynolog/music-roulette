@@ -44,3 +44,20 @@
   font-size: 0.8rem;
   font-style: italic;
 }
+
+@media screen and (max-width: 768px) {
+  .chartItemCover {
+    width: 55px;
+  }
+  .chartItemEmptyCover {
+    width: 55px;
+    height: 55px;
+  }
+
+  .chartItemTitle {
+    font-size: 0.8rem;
+  }
+  .chartItemSubtitle {
+    font-size: 0.7rem;
+  }
+}
