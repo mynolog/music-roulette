@@ -1,7 +1,7 @@
 # Music Roulette
 
-## 👉 [Music Roulette 보러 가기](https://minholeelog.github.io/music-roulette/)
-
+## 👉 [Music Roulette 보러 가기](https://mynolog.github.io/music-roulette/)
+    🚫 API KEY 만료
     🎧 리액트로 만드는 랜덤 음악 추천 서비스 with Shazam Core API
 
 ## 개선 사항
@@ -19,4 +19,4 @@
     미리 듣기: 컨트롤러 스타일 변경
     API 요청 로직: 불필요한 API 요청 로직 수정 필요
 
-## 개인 계정 push 테스트
+
